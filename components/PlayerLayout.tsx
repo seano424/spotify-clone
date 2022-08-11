@@ -16,8 +16,8 @@ export const PlayerLayout = ({ children }) => {
       <Box marginLeft="250px" marginBottom="100px">
         {children}
       </Box>
-      <Box border="2px solid black" position="absolute" left="0" bottom="0">
-        player
+      <Box height="100px" border="2px solid black" position="absolute" left="0" bottom="0">
+        Player
       </Box>
     </Box>
   )

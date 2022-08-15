@@ -5,7 +5,6 @@ export const PlayerLayout = ({ children }) => {
   return (
     <Box width="100vw" height="100vh">
       <Box
-        border="2px solid black"
         position="absolute"
         top="0"
         left="0"
@@ -14,9 +13,15 @@ export const PlayerLayout = ({ children }) => {
         <Sidebar />
       </Box>
       <Box marginLeft="250px" marginBottom="100px">
-        {children}
+        <Box height="calc(100vh - 100px)">{children}</Box>
       </Box>
-      <Box height="100px" border="2px solid black" position="absolute" left="0" bottom="0">
+      <Box
+        height="100px"
+        border="2px solid black"
+        position="absolute"
+        left="0"
+        bottom="0"
+      >
         Player
       </Box>
     </Box>

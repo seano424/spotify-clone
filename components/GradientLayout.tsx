@@ -19,6 +19,7 @@ export const GradientLayout = ({
       <Flex bgColor={`${color}.600`} padding="40px" align="end">
         <Box padding="20px">
           <Image
+            objectFit="cover"
             boxSize="160px"
             boxShadow="2xl"
             src={image}

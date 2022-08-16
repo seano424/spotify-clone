@@ -1,15 +1,19 @@
 import { Box, Flex, Text } from '@chakra-ui/layout'
 import { Image } from '@chakra-ui/react'
+import { ReactNode } from 'react'
+interface Props {
+  color: string
+  children: ReactNode
+  image?: string
+  subtitle?: string
+  title?: string
+  description?: string
+  roundImage?: boolean
+}
 
-export const GradientLayout = ({
-  color,
-  children,
-  image,
-  subtitle,
-  title,
-  description,
-  roundImage,
-}) => {
+const GradientLayout = (props: Props) => {
+  const { color, children, image, subtitle, title, description, roundImage } =
+    props
   return (
     <Box
       height="100%"
@@ -40,3 +44,5 @@ export const GradientLayout = ({
     </Box>
   )
 }
+
+export default GradientLayout

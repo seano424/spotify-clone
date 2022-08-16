@@ -17,7 +17,7 @@ export const PlayerLayout = ({ children }) => {
       </Box>
       <Box
         height="100px"
-        border="2px solid black"
+        width="100vw"
         position="absolute"
         left="0"
         bottom="0"

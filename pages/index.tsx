@@ -1,15 +1,17 @@
-import { GradientLayout } from '@/components/GradientLayout'
+import GradientLayout from '@/components/GradientLayout'
 import { Box, Flex, Text } from '@chakra-ui/layout'
 import { Image } from '@chakra-ui/react'
+import { useMe } from 'lib/hooks'
 import prisma from 'lib/prisma'
 
 export default function Home({ artists }) {
+  const { user, isLoading, isError } = useMe()
   return (
     <GradientLayout
       image="/images/me.jpg"
       subtitle="profile"
-      title="Sean OReilly"
-      description="15 public playlists"
+      title={`${user?.firstName} ${user?.lastName}`}
+      description={`${user?.playlistsCount} public playlists`}
       roundImage
       color="purple"
     >
@@ -21,8 +23,8 @@ export default function Home({ artists }) {
           <Text fontSize="md">Only visible to you</Text>
         </Box>
         <Flex gap="4" flexWrap="wrap">
-          {artists.map((artist) => (
-            <Box key={artist} width="20%">
+          {artists?.map((artist, i) => (
+            <Box key={i} width="20%">
               <Box
                 bg="gray.900"
                 minHeight="200px"
